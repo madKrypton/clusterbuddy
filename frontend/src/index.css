@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Inter&family=Poppins:wght@600&family=Poppins:wght@500&family=Inter:wght@500&family=Roboto+Slab:wght@400&family=Roboto+Slab:wght@700&family=Roboto:wght@700&family=Roboto:wght@500");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    color: theme("colors.green.500");
+    font-family: "Roboto", serif;
+  }
+}
+
+button,
+input,
+input::placeholder {
+  font-family: "Roboto", serif;
+}
+
+@layer components {
+  .card {
+    background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white */
+    border-radius: theme("borderRadius.lg");
+    border: theme("borderWidth.DEFAULT") solid theme("colors.gray.200");
+    padding: theme("spacing.6");
+    box-shadow: theme("boxShadow.xl");
+    padding-top: theme("spacing.12");
+    color: theme("colors.green.500");
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Blur effect for Safari */
+  }
+  .card-hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Same semi-transparent white */
+    border-radius: theme("borderRadius.lg");
+    padding: theme("spacing.6");
+    box-shadow: theme("boxShadow.xl");
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .card-active {
+    background-color: rgba(255, 255, 255, 0.4); /* Same semi-transparent white */
+    border-radius: theme("borderRadius.lg");
+    padding: theme("spacing.6");
+    box-shadow: theme("boxShadow.xl");
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .card-disabled {
+    background-color: rgba(255, 255, 255, 0.4); /* Same semi-transparent white */
+    border-radius: theme("borderRadius.lg");
+    padding: theme("spacing.6");
+    box-shadow: theme("boxShadow.xl");
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .custom-shadow {
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+pre,
+code {
+  font-family: SFMono-Regular, Menlo;
+  font-size: 12.5px;
+}
+
+#portal {
+  top: 0;
+  width: 40%;
+  left: 30%;
+  position: absolute;
+}
+
+.require:after {
+  content: " *";
+  color: red;
+}
+
+.input-box-shadow:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 253, 77, 0.25);
+}

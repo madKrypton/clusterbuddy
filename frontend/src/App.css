@@ -1,0 +1,44 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 10px;
+  background-color: grey;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 0.6;
+}
+.header-items {
+  display: flex;
+  flex: 0.8;
+  justify-content: space-evenly;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  flex: 0.2;
+  justify-content: space-around;
+}
+.redirect {
+  display: flex;
+  flex: 0.8;
+}
+.redirect > img {
+  margin-right: 5px;
+}
+.signout-btn {
+  display: flex;
+  align-items: center;
+}
+.signout-btn:hover {
+  cursor: pointer;
+}
+.signout-btn > span {
+  font-weight: bolder;
+  font-size: x-large;
+  color: gray;
+}
+

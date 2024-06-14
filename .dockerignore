@@ -1,0 +1,6 @@
+Dockerfile
+*.md
+bin
+.idea
+.git
+frontend/node_modules
