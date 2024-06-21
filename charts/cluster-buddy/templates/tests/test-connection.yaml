@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "cluster-buddy.fullname" . }}-test-connection"
+  labels:
+    {{- include "cluster-buddy.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  {{- include "cluster-buddy.imagePullSecrets" . | nindent 2 }}
+  containers:
+    - name: wget
+      image: {{ include "test.image" . }}
+      command: ['wget']
+      args: ['--timeout=5', '{{ include "cluster-buddy.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

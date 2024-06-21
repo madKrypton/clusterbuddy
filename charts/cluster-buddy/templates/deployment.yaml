@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "helm-dashboard.fullname" . }}
+  name: {{ include "cluster-buddy.fullname" . }}
   labels:
-    {{- include "helm-dashboard.labels" . | nindent 4 }}
+    {{- include "cluster-buddy.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "helm-dashboard.selectorLabels" . | nindent 6 }}
+      {{- include "cluster-buddy.selectorLabels" . | nindent 6 }}
   strategy: {{- toYaml .Values.updateStrategy | nindent 4 }}
   template:
     metadata:
@@ -19,23 +19,23 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "helm-dashboard.selectorLabels" . | nindent 8 }}
+        {{- include "cluster-buddy.selectorLabels" . | nindent 8 }}
     spec:
-      {{- include "helm-dashboard.imagePullSecrets" . | nindent 6 }}
-      serviceAccountName: {{ include "helm-dashboard.serviceAccountName" . }}
+      {{- include "cluster-buddy.imagePullSecrets" . | nindent 6 }}
+      serviceAccountName: {{ include "cluster-buddy.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           command:
-            - /bin/helm-dashboard
+            - /bin/cluster-buddy
           args:
           {{- with .Values.extraArgs }}
             {{- toYaml . | nindent 12 }}
           {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ include "helm-dashboard.image" . }}"
+          image: "{{ include "cluster-buddy.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: HELM_CACHE_HOME
@@ -83,7 +83,7 @@ spec:
         - name: data
         {{- if .Values.dashboard.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ include "helm-dashboard.fullname" . }}
+            claimName: {{ include "cluster-buddy.fullname" . }}
         {{- else }}
           emptyDir: { }
         {{- end }}

@@ -13,10 +13,10 @@ global:
   imagePullSecrets: []
 
 image:
-  repository: komodorio/helm-dashboard
-  pullPolicy: IfNotPresent
+  repository: gotcclusterbuddyacr.azurecr.io/clusterbuddy
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
   imagePullSecrets: []
 
 nameOverride: ""
@@ -31,11 +31,11 @@ serviceAccount:
 
 resources:
   requests:
-    cpu: 200m
-    memory: 256Mi
+    cpu: 2
+    memory: 2Gi
   limits:
-    cpu: 1
-    memory: 1Gi
+    cpu: 2
+    memory: 2Gi
 
 dashboard:
   allowWriteActions: true
