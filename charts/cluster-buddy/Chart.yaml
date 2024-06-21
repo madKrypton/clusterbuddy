@@ -2,8 +2,8 @@ apiVersion: v2
 type: application
 
 name: cluster-buddy
-description: A GUI Dashboard for Helm
-icon: "https://raw.githubusercontent.com/komodorio/helm-dashboard/main/images/logo.svg"
+description: A GUI Dashboard for Helm by Cluster Buddy
+icon: "https://raw.githubusercontent.com/madKrypton/clusterbuddy/main/frontend/src/assets/logo.svg"
 
 version: 2.0.1
-appVersion: latest 
+appVersion: 2.2.55

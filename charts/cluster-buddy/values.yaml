@@ -13,7 +13,7 @@ global:
   imagePullSecrets: []
 
 image:
-  repository: gotcclusterbuddyacr.azurecr.io/clusterbuddy
+  repository: omnichannelhrblockca.azurecr.io/hrb/clusterbuddy
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"

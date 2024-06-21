@@ -228,13 +228,13 @@ export default function RevisionDetails({
           {release.has_tests ? (
             <>
               {" "}
-              <Button
+              {/* <Button
                 onClick={handleRunTests}
                 className="flex items-center gap-2 h-1/2 text-sm font-semibold"
               >
                 <BsCheckCircle />
                 Run tests
-              </Button>
+              </Button> */}
               <Modal
                 containerClassNames="w-4/5"
                 title="Test results"

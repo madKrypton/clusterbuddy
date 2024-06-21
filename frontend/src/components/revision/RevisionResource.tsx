@@ -16,7 +16,6 @@ import "react-modern-drawer/dist/index.css";
 import Button from "../Button";
 import Badge, { getBadgeType } from "../Badge";
 import Spinner from "../Spinner";
-import { Troubleshoot } from "../Troubleshoot";
 
 interface Props {
   isLatest: boolean;
@@ -108,9 +107,9 @@ const ResourceRow = ({
             {message && (
               <div className="text-gray-500 font-thin">{message}</div>
             )}
-            {(badgeType === "error" || badgeType === "warning") && (
+            {/* {(badgeType === "error" || badgeType === "warning") && (
               <Troubleshoot />
-            )}
+            )} */}
           </div>
         </td>
         <td className="rounded">
@@ -184,15 +183,6 @@ const DescribeResource = ({
         </div>
 
         <div className="flex  items-center gap-4 pr-4">
-          <a
-            href="https://www.komodor.com/helm-dash/?utm_campaign=Helm%20Dashboard%20%7C%20CTA&amp;utm_source=helm-dash&amp;utm_medium=cta&amp;utm_content=helm-dash"
-            className="bg-primary text-white p-1.5 text-sm flex items-center rounded"
-            target="_blank"
-            rel="noreferrer"
-          >
-            See more details in Komodor
-            <RiExternalLinkLine className="ml-2 text-lg" />
-          </a>
           <button
             type="button"
             className="h-fit"

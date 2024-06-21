@@ -1,6 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
 import ShutDownButton from "./ShutDownButton";
-
 const meta = {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading

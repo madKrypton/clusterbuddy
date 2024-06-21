@@ -25,14 +25,6 @@ export default function Header() {
 
   const location = useLocation();
 
-  const openSupportChat = () => {
-    window.open("https://app.slack.com/client/T03Q4H8PCRW", "_blank");
-  };
-
-  const openProjectPage = () => {
-    window.open("https://github.com/komodorio/helm-dashboard", "_blank");
-  };
-
   const resetCache = async () => {
     try {
       await apiService.fetchWithDefaults("/api/cache", {
@@ -78,24 +70,8 @@ export default function Header() {
               </LinkWithSearchParams>
             </li>
             <li>
-              <LinkWithSearchParams
-                to={"/repository"}
-                exclude={["tab"]}
-                end={false}
-                className={getBtnStyle("repository")}
-              >
-                Repository
-              </LinkWithSearchParams>
-            </li>
-            <li>
               <DropDown
                 items={[
-                  {
-                    id: "1",
-                    text: "Support chat",
-                    icon: <BsSlack />,
-                    onClick: openSupportChat,
-                  },
                   { id: "3", isSeparator: true },
                   {
                     id: "4",
