@@ -1,4 +1,4 @@
-replicaCount: 1
+replicaCount: 2
 
 # Flag for setting environment to debug mode 
 debug: false
@@ -16,7 +16,7 @@ image:
   repository: omnichannelhrblockca.azurecr.io/hrb/clusterbuddy
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: 2.2.55
   imagePullSecrets: []
 
 nameOverride: ""
@@ -31,11 +31,11 @@ serviceAccount:
 
 resources:
   requests:
-    cpu: 2
-    memory: 2Gi
+    cpu: 3
+    memory: 3Gi
   limits:
-    cpu: 2
-    memory: 2Gi
+    cpu: 3
+    memory: 3Gi
 
 dashboard:
   allowWriteActions: true

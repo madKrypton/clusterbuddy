@@ -61,11 +61,6 @@ export default function App() {
                     path=":namespace/:chart/installed/revision/:revision"
                     element={<Revision />}
                   />
-                  {/* <Route path="repositoSupport chatry/" element={<RepositoryPage />} />
-                  <Route
-                    path="repository/:selectedRepo?"
-                    element={<RepositoryPage />}
-                  /> */}
                   <Route path="*" element={<Installed />} />
                 </Route>
                 <Route path="*" element={<Installed />} />
